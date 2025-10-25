@@ -1,4 +1,14 @@
-Online course
 https://www.figma.com/design/gFoTExaXHl19o8PoNNgGSL/
 Free-Education-Template-%7C-Online-Courses-%26-E-Learning-%7C-EduPress-
 (Community)?node-id=0-1&p=f&t=Hcgs4FwaDq8dna18-0
+
+
+
+task
+1. project nomini ozgartirish
+2. gitignore qoshish kk (.env, .venv, venv, migrations)
+3. slugni avtomatik olib ketish
+4. base model yozish (createdbasemodel, uuidbasemodel, slugbasemodel)
+5. secret_key, debug, email malumotlari, celery broker url hammasi .env ga otkaziladi
+6. email html yuborish (verification one time link)
+
