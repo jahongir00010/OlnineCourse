@@ -14,7 +14,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user( # type: ignore
             username=validated_data['username'],
             email=validated_data['email'],
-            password=validated_data['password']
+            password=validated_data[' password']
         )
 
         user.is_active = False
