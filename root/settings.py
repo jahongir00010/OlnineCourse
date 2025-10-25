@@ -1,5 +1,3 @@
-
-
 import os
 from pathlib import Path
 
@@ -9,11 +7,7 @@ load_dotenv()
 
 FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:8000")
 
-
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 SECRET_KEY = 'django-insecure-_3$jfsm$62il0e=9a%9ms--tp=6)vlklv@j@levd=*%!a%0xd='
 
@@ -21,9 +15,6 @@ SECRET_KEY = 'django-insecure-_3$jfsm$62il0e=9a%9ms--tp=6)vlklv@j@levd=*%!a%0xd=
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.apps.AppsConfig',
     'rest_framework',
+    'drf_spectacular',
 
 ]
 
@@ -67,7 +59,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'root.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -80,13 +71,10 @@ DATABASES = {
     }
 }
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_USER_MODEL = 'apps.User'
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,7 +91,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -114,7 +101,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -143,4 +129,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
+
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
