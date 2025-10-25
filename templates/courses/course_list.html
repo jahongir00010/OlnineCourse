@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Kurslar ro'yxati</title>
+</head>
+<body>
+    <h1>Barcha kurslar</h1>
+
+    {% for course in courses %}
+        <div style="margin-bottom: 20px;">
+            <h2><a href="{% url 'course_detail' course.slug %}">{{ course.title }}</a></h2>
+            <p>{{ course.description|truncatewords:20 }}</p>
+            <p><strong>Narxi:</strong> ${{ course.price }}</p>
+        </div>
+    {% empty %}
+        <p>Hozircha kurslar mavjud emas.</p>
+    {% endfor %}
+</body>
+</html>
