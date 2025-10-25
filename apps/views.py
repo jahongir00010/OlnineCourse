@@ -25,7 +25,7 @@ class RegisterView(APIView):
             user.is_active = False
             user.save()
 
-            token = email_verification_token.make_token(user)
+            token =  email_verification_token.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             frontend_url = getattr(settings, "FRONTEND_URL", "http://localhost:8000")
             verify_link = f"{frontend_url}/verify/{uid}/{token}/"
